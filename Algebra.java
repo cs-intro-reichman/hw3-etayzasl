@@ -9,7 +9,7 @@ public class Algebra {
 		// tests:
 
 		// == 275;
-		int test5 = sqrt(76123);
+		int test5 = sqrt(10000);
 		System.out.println("Test 5 (floor value): " + (test5));
 
 	}
@@ -82,7 +82,7 @@ public class Algebra {
 	// Returns the integer part of sqrt(x)
 	public static int sqrt(int x) {
 		int sqrtX = 0;
-		while (times(sqrtX + 1, sqrtX + 1) < x) {
+		while (times(sqrtX + 1, sqrtX + 1) <= x) {
 			sqrtX++;
 		}
 		return sqrtX;
