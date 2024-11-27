@@ -4,6 +4,7 @@ public class Anagram {
 	public static void main(String args[]) {
 		// Tests the isAnagram function.
 		System.out.println(isAnagram("silent","listen"));  // true
+		System.out.println(preProcess("hello world"));  // true
 		
 		System.out.println(isAnagram("William Shakespeare","I am a weakish speller")); // true
 		System.out.println(isAnagram("Madam Curie","Radium came")); // true
@@ -30,8 +31,8 @@ public class Anagram {
 
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		str1 = preProcess(str1);
-		str2 = preProcess(str2);
+		str1 = preProcess(str1).replace(" ", "");
+		str2 = preProcess(str2).replace(" ", "");
 		if (str1.length() != str2.length()) return false;
 		for (int i = 0; i < str1.length(); i++) {
 			for (int j = 0; j < str2.length(); j++) {
@@ -50,7 +51,7 @@ public class Anagram {
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
 		str = str.toLowerCase();
-		str = str.replaceAll("[^a-z]", "");
+		str = str.replaceAll("[^a-z ]", "");
 		return str;
 	} 
 	   
